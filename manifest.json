@@ -1,0 +1,22 @@
+{
+    "name": "YouTube Everywhere",
+    "short_name": "YouTubeEverywhere",
+    "description": "Open YouTube hyperlinks as embedded videos.",
+    "version": "1.0.0",
+    "manifest_version": 2,
+    "icons": {
+      "48": "images/icon.png"
+    },   
+    "web_accessible_resources": [
+      "images/toggle1.png",
+      "images/toggle2.png"
+    ], 
+    "content_scripts": [
+      {
+      "matches": ["http://*/*", "https://*/*"],
+      "exclude_globs": ["https://www.youtube.com/*"],
+      "js": ["script.js"]
+      }
+    ]
+  
+  }
