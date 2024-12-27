@@ -16,15 +16,18 @@ browser.runtime.onInstalled.addListener(function(details) {
 browser.menus.onClicked.addListener(function(info, tab) {
     if (info.menuItemId === "youtube-linkplayer") {
         if (info.linkUrl.includes('youtube.com/watch')) {
-            var id = info.linkUrl.substring(info.linkUrl.indexOf("=") + 1, info.linkUrl.indexOf("=") + 12);
-            browser.tabs.sendMessage(tab.id, {message: "LINKPLAYER", videoId: id});
+            var id = info.linkUrl.substring(info.linkUrl.indexOf("v=") + 2, info.linkUrl.indexOf("v=") + 13);
+            var time = null;
+            if (info.linkUrl.includes('&t=')) {
+            var time = info.linkUrl.substring(info.linkUrl.indexOf("t=") + 2);
+            var seconds = time.slice(0, -1);
+            }
+            browser.tabs.sendMessage(tab.id, {message: "LINKPLAYER", videoId: id, timeStamp: seconds});
         } 
-        
         if (info.linkUrl.includes('https://youtu.be/')) {
             var id = info.linkUrl.substring(info.linkUrl.indexOf("e/") +2, 28);
             browser.tabs.sendMessage(tab.id, {message: "LINKPLAYER", videoId: id});
-        }
-        
+        }  
         if (info.linkUrl.includes('https://youtube.com/shorts')) {
             var id = info.linkUrl.substring(info.linkUrl.indexOf("s/") +2, info.linkUrl.indexOf("s/") + 13);
             browser.tabs.sendMessage(tab.id, {message: "LINKPLAYER", videoId: id});

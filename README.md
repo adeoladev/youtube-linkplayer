@@ -1,12 +1,12 @@
 <img src="https://raw.githubusercontent.com/adeoladev/youtube-everywhere/main/images/toggle.png" width="100">
 
-# YouTube Everywhere
-This script allows you to open any YouTube hyperlink as an embedded video. Which saves you the hassle of opening new tabs or windows to watch a shared video.
+# YouTube Link-Player
+This script allows you to open any YouTube hyperlink as an embedded video. Which saves you the hassle of opening new tabs to watch a shared video, or having to keep leaving and returning to the comment section when clicking on timestamps.
 
 ## Install
-Firefox:<br>
-[https://addons.mozilla.org/en-GB/firefox/addon/youtube-linkplayer/](https://addons.mozilla.org/en-GB/firefox/addon/youtube-linkplayer/)
-Edge:<br>
+Firefox:
+[https://addons.mozilla.org/en-GB/firefox/addon/youtube-linkplayer/](https://addons.mozilla.org/en-GB/firefox/addon/youtube-linkplayer/)<br>
+Edge:
 [https://microsoftedge.microsoft.com/addons/detail/dmikdghhabolmcokdbajfbdicpebeiic](https://microsoftedge.microsoft.com/addons/detail/dmikdghhabolmcokdbajfbdicpebeiic)
 
 ## Usage

@@ -1,4 +1,5 @@
 setTimeout(function () {
+    if (!window.location.hostname.includes("youtube.com")) {
 var youtubeLinks = document.querySelectorAll('a[href*="youtube.com/watch"]');
 var miniYoutubeLinks = document.querySelectorAll('a[href*="https://youtu.be/"]');
 var youtubeShorts = document.querySelectorAll('a[href*="youtube.com/shorts"]');
@@ -52,6 +53,7 @@ youtubeShorts.forEach(function(element){
     }); 
     }
 });
+    }
 }, 1000);
 
 var clickedEl = null;
@@ -61,9 +63,14 @@ document.addEventListener("contextmenu", function(event){
 }, true);
 
 browser.runtime.onMessage.addListener(function(message) {
+    var time = '';
     if (message.message === "LINKPLAYER") {
+        if(message.timeStamp) {
+        var time = '?s=linkplayer&start='+message.timeStamp;
+        }
         var div = document.createElement('div');
-        div.innerHTML = '<iframe style="display:block" id="frame'+message.videoId+'" width="560" height="315" src="https://www.youtube.com/embed/'+message.videoId+'" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>';
+        div.setAttribute('id','frame'+message.videoId);
+        div.innerHTML = '<iframe style="display:block" width="560" height="315" src="https://www.youtube.com/embed/'+message.videoId+time+'" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>';
         clickedEl.appendChild(div);
     } else if (message.message === "LINKPLAYER ERROR") {
        alert("That is not a valid YouTube URL");
