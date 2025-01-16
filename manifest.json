@@ -2,7 +2,8 @@
   "name": "YouTube Link-Player",
   "short_name": "YouTubeLinkPlayer",
   "description": "Open YouTube hyperlinks as embedded videos.",
-  "version": "1.2.5",
+  "homepage_url": "https://github.com/adeoladev/youtube-linkplayer",
+  "version": "1.2.6",
   "manifest_version": 3,
   "permissions": ["contextMenus", "menus"],
   "icons": {

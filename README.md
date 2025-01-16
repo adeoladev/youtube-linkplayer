@@ -1,7 +1,7 @@
 <img src="https://raw.githubusercontent.com/adeoladev/youtube-everywhere/main/images/toggle.png" width="100">
 
 # YouTube Link-Player
-This script allows you to open any YouTube hyperlink as an embedded video. Which saves you the hassle of opening new tabs to watch a shared video, or having to keep leaving and returning to the comment section when clicking on timestamps.
+This browser extension allows you to open any YouTube hyperlink as an embedded video. Which saves you the hassle of opening new tabs to watch a shared video, or having to keep leaving and returning to the comment section when clicking on timestamps.
 
 ## Install
 Firefox:
