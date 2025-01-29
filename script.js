@@ -9,7 +9,7 @@ var toggle1Image = chrome.runtime.getURL("images/toggle.png");
 youtubeLinks.forEach(function(element){
     var children = Array.from(element.childNodes);
     let nodeTypes = children.map(el=>el.tagName);
-    if(!nodeTypes[0] || !nodeTypes.includes("IMG")) {
+    if(element.innerText || nodeTypes.includes(':header')) {
     var id = element.href.substring(element.href.indexOf("=") + 1, element.href.indexOf("=") + 12);
     var randomNum = Math.random();
     element.insertAdjacentHTML('afterend',"<img id='button"+randomNum+"' class='ytlp-button' src='"+toggle1Image+"'>");
@@ -27,7 +27,7 @@ youtubeLinks.forEach(function(element){
 miniYoutubeLinks.forEach(function(element){
     var children = Array.from(element.childNodes);
     let nodeTypes = children.map(el=>el.tagName);
-    if(!nodeTypes[0] || !nodeTypes.includes("IMG")) {
+    if(element.innerText || nodeTypes.includes(':header')) {
     var id = element.href.substring(element.href.indexOf("e/") +2, 28);
     var randomNum = Math.random();
     element.insertAdjacentHTML('afterend',"<img id='button"+randomNum+"' class='ytlp-button' src='"+toggle1Image+"'>");
@@ -45,7 +45,7 @@ miniYoutubeLinks.forEach(function(element){
 youtubeShorts.forEach(function(element){
     var children = Array.from(element.childNodes);
     let nodeTypes = children.map(el=>el.tagName);
-    if(!nodeTypes[0] || !nodeTypes.includes("IMG")) {
+    if(element.innerText || nodeTypes.includes(':header')) {
     var id = element.href.substring(element.href.indexOf("s/") +2, element.href.indexOf("s/") + 13);
     var randomNum = Math.random();
     element.insertAdjacentHTML('afterend',"<img id='button"+randomNum+"' class='ytlp-button' src='"+toggle1Image+"'>");
